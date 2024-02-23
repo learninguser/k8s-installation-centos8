@@ -12,7 +12,6 @@ sudo systemctl enable docker &>> ${LOG_FILE}
 sudo usermod -aG docker centos &>> ${LOG_FILE}
 
 # Step 2: Download CRI DockerD interface
-
 curl -LO https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.9/cri-dockerd-0.3.9-3.el8.x86_64.rpm &>> ${LOG_FILE}
 yum install cri-dockerd-0.3.9-3.el8.x86_64.rpm -y &>> ${LOG_FILE}
 

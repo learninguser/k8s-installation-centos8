@@ -1,6 +1,7 @@
 #!/bin/bash
 
 LOG_FILE="/tmp/k8s.log"
+HOME="/home/centos"
 
 # Step 1: Docker installation
 sudo yum install -y yum-utils &>> ${LOG_FILE}
@@ -25,3 +26,6 @@ sudo systemctl restart kubelet &>> ${LOG_FILE}
 # Necessary for K8s to work
 sudo rm /etc/containerd/config.toml &>> ${LOG_FILE}
 sudo systemctl restart containerd &>> ${LOG_FILE}
+
+# Step 5: Create .kube directory
+mkdir -p $HOME/.kube
