@@ -29,3 +29,4 @@ sudo systemctl restart containerd &>> ${LOG_FILE}
 
 # Step 5: Create .kube directory
 mkdir -p $HOME/.kube
+sudo chown centos:centos .kube
